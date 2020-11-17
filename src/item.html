@@ -1,0 +1,108 @@
+<template>
+	<div class="slds-box slds-media">
+		<div class="slds-media__figure slds-media__figure_fixed-width">
+			<div class="item-tile-figure">
+				<div class="item-tile-icon-container">
+					<lightning-button-stateful label-when-off={positionLabel} label-when-on={positionLabel}
+						icon-name-when-off="utility:chevronright" icon-name-when-on="utility:chevrondown"
+						selected={showDetails} onclick={handleShowDetails} variant="text">
+					</lightning-button-stateful>
+				</div>
+			</div>
+		</div>
+		<div class="slds-media__body">
+			<div class="item-tile-body">
+				<div class="slds-grid slds-gutters_direct-x-small">
+					<div class="slds-col slds-size_1-of-12">
+						<lightning-input type="number" label="quantity" variant="label-hidden"></lightning-input>
+					</div>
+					<div class="slds-col slds-size_2-of-12">
+						<lightning-input type="number" label="customer-id" variant="label-hidden"></lightning-input>
+					</div>
+					<div class="slds-col slds-size_2-of-12">
+						<lightning-input type="date" label="date" variant="label-hidden"></lightning-input>
+					</div>
+					<div class="slds-col slds-size_2-of-12">
+						<lightning-combobox label="product" options={options} variant="label-hidden">
+						</lightning-combobox>
+					</div>
+					<div class="slds-col slds-size_4-of-12">
+						<div class="slds-grid slds-gutters_direct-x-small">
+							<div class="slds-col slds-size_1-of-3">
+								<lightning-input type="number" label="quantity" variant="label-hidden">
+								</lightning-input>
+							</div>
+							<div class="slds-col slds-size_1-of-3">
+								<lightning-input type="number" label="quantity" variant="label-hidden">
+								</lightning-input>
+							</div>
+							<div class="slds-col slds-size_1-of-3">
+								<lightning-input type="number" label="quantity" variant="label-hidden">
+								</lightning-input>
+							</div>
+						</div>
+					</div>
+					<div class="slds-col slds-size_1-of-12">
+						<lightning-button-icon icon-name="utility:delete" onclick={deleteItem}></lightning-button-icon>
+					</div>
+				</div>
+				<template if:true={showDetails}>
+					<div class="slds-grid slds-gutters_direct-x-small slds-m-top_small slds-wrap">
+						<div class="slds-col slds-size_3-of-12">
+							<lightning-combobox label="Laufzeit" options={options}></lightning-combobox>
+						</div>
+						<div class="slds-col slds-size_4-of-12">
+							<lightning-combobox label="Rabatt" options={options}></lightning-combobox>
+						</div>
+						<div class="slds-col slds-size_5-of-12">
+
+						</div>
+						<div class="slds-col slds-size_3-of-12 slds-m-top_small">
+							<lightning-input type="toggle" label="ESS" message-toggle-active=""
+								message-toggle-inactive=""></lightning-input>
+						</div>
+						<div class="slds-col slds-size_4-of-12 slds-m-top_small">
+							<lightning-input type="toggle" label="Extras" message-toggle-active=""
+								message-toggle-inactive=""></lightning-input>
+						</div>
+					</div>
+				</template>
+
+				<div class="slds-grid slds-gutters_direct-x-small slds-m-top_small">
+					<div class="slds-col slds-size_7-of-12">
+						<lightning-input data-field="upgrade" type="text" label="Upgrade" value="Lorem Ipsum"
+							variant="label-hidden" disabled></lightning-input>
+					</div>
+					<div class="slds-col slds-size_4-of-12">
+						<div class="slds-grid slds-gutters_direct-x-small">
+							<div class="slds-col slds-size_1-of-3">
+								<lightning-input data-field="upgradeListPrice" type="number" label="Upgrade Price"
+									value="100" variant="label-hidden" formatter="currency" step="0.01" disabled
+									tabindex="-1"></lightning-input>
+							</div>
+							<div class="slds-col slds-size_1-of-3">
+								<lightning-input data-field="upgradeYourPrice" type="number" label="Your Upgrade Price"
+									value="100" variant="label-hidden" formatter="currency" step="0.01" disabled
+									tabindex="-1"></lightning-input>
+							</div>
+							<div class="slds-col slds-size_1-of-3">
+								<lightning-input data-field="upgradeTotalPrice" type="number"
+									label="Total Upgrade Price" value="100" variant="label-hidden" formatter="currency"
+									disabled step="0.01"></lightning-input>
+							</div>
+						</div>
+					</div>
+					<div class="slds-col slds-size_1-of-12"></div>
+				</div>
+
+				<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error slds-m-top_small"
+					role="alert">
+					<ul>
+						<li>error message 1</li>
+						<li>error message 2</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

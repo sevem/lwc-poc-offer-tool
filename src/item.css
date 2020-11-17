@@ -1,0 +1,34 @@
+.slds-button:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.slds-box {
+  padding: 0.5rem;
+}
+
+.item-tile-figure {
+  margin-left: 0.25rem;
+}
+
+.item-tile-icon-container {
+  position: relative;
+}
+
+.item-tile-body {
+  padding: 0.75rem;
+  border-left: 1px solid rgb(221, 219, 218);
+}
+
+.slds-section__title-action {
+  border-radius: 0.25rem;
+}
+
+.slds-theme_error {
+  border-radius: 0.25rem;
+}
+
+.slds-notify_alert {
+  justify-content: left !important;
+  text-align: left !important;
+}

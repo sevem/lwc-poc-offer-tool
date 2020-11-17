@@ -1,0 +1,22 @@
+<template>
+	<div class="app slds-p-around_x-large">
+		<c-header></c-header>
+		<ul>
+			<li class="line-item-tile">
+				<c-headline></c-headline>
+			</li>
+			<template for:each={products} for:item="item">
+				<li key={item.id} class="line-item-tile">
+					<c-item position={item.position}></c-item>
+				</li>
+			</template>
+		</ul>
+
+		<lightning-button label="Position hinzufügen" icon-name="utility:add" onclick={addProduct}></lightning-button>
+
+		<c-summary></c-summary>
+
+		<c-packages></c-packages>
+	</div>
+
+</template>
